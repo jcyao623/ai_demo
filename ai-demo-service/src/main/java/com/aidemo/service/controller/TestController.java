@@ -1,8 +1,8 @@
  package com.aidemo.service.controller;
  
- import com.aidemo.common.dto.Result;
- import com.aidemo.service.service.AITestService;
- import org.slf4j.Logger;
+import com.aidemo.common.dto.Result;
+import com.aidemo.service.service.AITestService2;
+import org.slf4j.Logger;
  import org.slf4j.LoggerFactory;
  import org.springframework.web.bind.annotation.*;
  
@@ -12,10 +12,10 @@
  @RequestMapping("/api/ai/test")
  public class TestController {
  
-     private static final Logger log = LoggerFactory.getLogger(TestController.class);
-     private final AITestService aiTestService;
+    private static final Logger log = LoggerFactory.getLogger(TestController.class);
+    private final AITestService2 aiTestService;
  
-     public TestController(AITestService aiTestService) {
+    public TestController(AITestService2 aiTestService) {
          this.aiTestService = aiTestService;
      }
  
@@ -47,8 +47,13 @@
      }
  
      /** 仅测试全链路 */
-     @PostMapping("/fullflow")
-     public Result<Map<String, Object>> testFullFlow() {
-         return Result.success(aiTestService.testFullFlow());
-     }
+    @PostMapping("/fullflow")
+    public Result<Map<String, Object>> testFullFlow() {
+        return Result.success(aiTestService.testFullFlow());
+    }
+ 
+    @PostMapping("/mysql")
+    public Result<Map<String, Object>> testMySQL() {
+        return Result.success(aiTestService.testMySQL());
+    }
  }

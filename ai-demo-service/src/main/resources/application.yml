@@ -1,50 +1,50 @@
-  server:
-    port: 8081
+server:
+  port: 8081
  
-  spring:
-    application:
-      name: ai-demo-service
- 
-    config:
-      import:
-        - optional:nacos:ai-demo-service.yml
- 
-    cloud:
-      nacos:
-        discovery:
-          server-addr: 127.0.0.1:8848
-        config:
-          server-addr: 127.0.0.1:8848
- 
-    data:
-      redis:
-        host: localhost
-        port: 6379
-        timeout: 3000ms
-        lettuce:
-          pool:
-            max-active: 8
-            max-idle: 8
-            min-idle: 0
- 
-    ai:
-      openai:
-        api-key: placeholder
-        base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
-        chat:
-          options:
-            model: qwen-plus
- 
-  logging:
-    level:
-      com.aidemo: DEBUG
- 
+spring:
+  application:
+    name: ai-demo-service
 
-# spring:
-#   config:
-#     activate:
-#       on-profile: docker
-#   data:
-#     redis:
-#       host: redis
-#       port: 6379
+  config:
+    import:
+      - optional:nacos:ai-demo-service.yml
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+
+  ai:
+    openai:
+      api-key: placeholder
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      chat:
+        options:
+          model: qwen-plus
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ai_demo?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
+    username: root
+    password: placeholder
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+
+logging:
+  level:
+    com.aidemo.service.service.AllocationService: DEBUG
+    com.aidemo: DEBUG
