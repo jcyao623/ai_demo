@@ -1,0 +1,44 @@
+ server:
+   port: 8081
+ 
+ spring:
+   application:
+     name: ai-demo-service
+ 
+   cloud:
+     nacos:
+       discovery:
+         server-addr: 127.0.0.1:8848
+ 
+   data:
+     redis:
+       host: localhost
+       port: 6379
+       timeout: 3000ms
+       lettuce:
+         pool:
+           max-active: 8
+           max-idle: 8
+           min-idle: 0
+ 
+   ai:
+     openai:
+       api-key: ${DASHSCOPE_API_KEY:sk-your-api-key-here}
+       base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+       chat:
+         options:
+           model: qwen-plus
+ 
+ logging:
+   level:
+     com.aidemo: DEBUG
+ 
+ ---
+ spring:
+   config:
+     activate:
+       on-profile: docker
+   data:
+     redis:
+       host: redis
+       port: 6379

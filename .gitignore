@@ -1,0 +1,36 @@
+ ### Java ###
+ *.class
+ *.jar
+ *.war
+ *.nar
+ target/
+ !**/src/main/**/target/
+ !**/src/test/**/target/
+ 
+ ### Maven ###
+ mvnw
+ mvnw.cmd
+ .mvn/timing.db
+ 
+ ### IDE ###
+ .idea/
+ *.iml
+ *.iws
+ .vscode/
+ .settings/
+ .project
+ .classpath
+ *.swp
+ *.swo
+ *~
+ 
+ ### OS ###
+ .DS_Store
+ Thumbs.db
+ 
+ ### Environment ###
+ .env
+ 
+ ### Logs ###
+ *.log
+ logs/

@@ -1,0 +1,31 @@
+ server:
+   port: 8080
+ 
+ spring:
+   application:
+     name: ai-demo-gateway
+ 
+   cloud:
+     gateway:
+       discovery:
+         locator:
+           enabled: true
+           lower-case-service-id: true
+       routes:
+         - id: ai-demo-service
+           uri: lb://ai-demo-service
+           predicates:
+             - Path=/api/**
+ 
+     nacos:
+       discovery:
+         server-addr: 127.0.0.1:8848
+ 
+   data:
+     redis:
+       host: localhost
+       port: 6379
+ 
+ logging:
+   level:
+     com.aidemo: DEBUG
