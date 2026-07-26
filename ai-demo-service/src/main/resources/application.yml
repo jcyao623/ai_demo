@@ -33,12 +33,12 @@
    level:
      com.aidemo: DEBUG
  
- ---
- spring:
-   config:
-     activate:
-       on-profile: docker
-   data:
-     redis:
-       host: redis
-       port: 6379
+
+# spring:
+#   config:
+#     activate:
+#       on-profile: docker
+#   data:
+#     redis:
+#       host: redis
+#       port: 6379
