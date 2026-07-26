@@ -22,10 +22,10 @@
              <groupId>org.springframework.boot</groupId>
              <artifactId>spring-boot-starter-web</artifactId>
          </dependency>
-        <!-- Spring AI OpenAI (DashScope OpenAI-compatible mode) -->
+        <!-- Spring AI OpenAI -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
+            <artifactId>spring-ai-starter-model-openai</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
