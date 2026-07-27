@@ -34,3 +34,10 @@
  ### Logs ###
  *.log
  logs/
+/.m2-repo/
+ 
+### Temp ### 
+hs_err_pid* 
+tmp_* 
+*.py 
+.m2/
